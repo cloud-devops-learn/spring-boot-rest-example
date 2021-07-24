@@ -6,8 +6,16 @@ spring.jmx:
    enabled: false
 
 spring.datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:mem:bootexample;MODE=MySQL
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.128.0.3:3306/bootexample?useSSL=false
+    username: root
+    password: root
+
+spring.jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQLInnoDBDialect
+      ddl-auto: update # todo: in non-dev environments, comment this out:
+
 
 server:
   port: 8090
@@ -37,21 +45,5 @@ info:
 
 hotel.service:
   name: 'default profile:'
----
-spring:
-  profiles: test
-  h2:
-    console:
-      enabled: true
 
-spring.jpa:
-    hibernate.ddl-auto: create-drop
 
-hotel.service:
-  name: 'test profile:'
-  
-logging:
-  file: boot_example.log
-  org.hibernate: INFO
-
- 

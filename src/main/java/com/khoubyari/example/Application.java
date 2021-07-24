@@ -18,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 
 @SpringBootApplication
+//@PropertySource("file:/opt/dev/application.yml")
 @Configuration
 @EnableAutoConfiguration  // Sprint Boot Auto Configuration
 @ComponentScan(basePackages = "com.khoubyari.example")
